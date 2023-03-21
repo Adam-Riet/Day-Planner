@@ -2,7 +2,7 @@ var timeDisplayEl = $('#time-display');
 var saveBtn = $('.saveBtn');
 
 
-//Function utilizing dayjs to display current date and time. Thank you to UofU mini project for code. 
+
 
 
 
@@ -15,7 +15,8 @@ var saveBtn = $('.saveBtn');
 //Function does not begin until DOM has loaded.
  $(document).ready(function() {
     $('.saveBtn').on('click', function() {
-    alert("hello");
+       
+    
     
     
     });

@@ -2,10 +2,7 @@ var timeDisplayEl = $('#time-display');
 
 
 //Function utilizing dayjs to display current date and time. Thank you to UofU mini project for code. 
-function displayTime() {
-    var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
-    timeDisplayEl.text(rightNow);
-  }
+
 
 
 
@@ -31,9 +28,15 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
-    //
-    // TODO: Add code to display the current date in the header of the page.
+    
+
+    //Function utilizing dayjs to display current date and time. Thank you to UofU mini project for code. 
+    function displayTime() {
+        var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+        timeDisplayEl.text(rightNow);
+      }
+  
+      displayTime();
+      setInterval(displayTime, 1000);
   });
 
-  displayTime();
-  setInterval(displayTime, 1000);

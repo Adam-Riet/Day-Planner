@@ -60,9 +60,8 @@ body {
 
   #time-display {
     color: grey;
-    animation: colorChange 15s infinite;
+    animation: colorChange 12s infinite;
   }
-  
   
   @keyframes colorChange {
     0% {

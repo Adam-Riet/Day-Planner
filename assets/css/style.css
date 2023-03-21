@@ -57,3 +57,24 @@ body {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
+
+  #time-display {
+    color: grey;
+    animation: colorChange 15s infinite;
+  }
+  
+  
+  @keyframes colorChange {
+    0% {
+      color: grey;
+    }
+    33% {
+      color: #ff6961;
+    }
+    66% {
+      color: #77dd77;
+    }
+    100% {
+      color: grey;
+    }
+  }

@@ -1,7 +1,7 @@
 var timeDisplayEl = $('#time-display');
 
 
-
+//Function utilizing dayjs to display current date and time. Thank you to UofU mini project for code. 
 function displayTime() {
     var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
     timeDisplayEl.text(rightNow);

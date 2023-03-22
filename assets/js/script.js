@@ -16,11 +16,29 @@ var saveBtn = $('.saveBtn');
        localStorage.setItem(parentDivID, setSchedule);
     });
     
-   for (var index = 0; index < parentDivID.length; index++) {
-        // if timedisplayEL === DIV ID set Past
-        // if timedisplayEL > DIV ID set Present
-        // if timedisplayEL === DIV ID set future
-   }
+//Variable to get current hour from dayjs to then compare it to hour in div. Code from class 5, activity 26.
+    var time = dayjs().format('H');
+    //Loop to cycle through each element with time-block class. Extracts out the number in "hour-x" as an interger to compare it to var time's hour.
+    $('.time-block').each(function() {
+        var blockHour = parseInt($(this).attr('id').split('-')[1]);
+
+        if (blockHour < time) {
+            $(this).addClass('past');
+        } else if (blockHour === time) {
+            $(this).addClass('present');
+        } else { 
+            $(this).addClass('present');
+        }
+    });
+    
+    
+    
+    
+    
+    
+    
+
+
 
     
     

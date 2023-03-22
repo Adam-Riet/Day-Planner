@@ -17,14 +17,19 @@ var saveBtn = $('.saveBtn');
     });
     
 //Variable to get current hour from dayjs to then compare it to hour in div. Code from class 5, activity 26.
-    var time = dayjs().format('hA');
+    var time = dayjs().format('h a');
     //Loop to cycle through each element with time-block class. Extracts out the number in "hour-x" as an interger to compare it to var time's hour.
     $('.time-block').each(function() {
-        var blockHour = parseInt($(this).attr('id').split('-')[1]);
+        //creating new variables to extract both the hour and AM/PM to compare to time variable.
+        var scheduleID = $(this).attr('id').split('-');
+        var scheduleHour = parseInt(scheduleID[1]);
+        var scheduleAmPm = scheduleID[2];
+        //variable combing the schedule hour and and am/pm
+        var scheduleTime = scheduleHour + scheduleAmPm;
 
-        if (blockHour < time) {
+        if (scheduleTime < time) {
             $(this).addClass('past');
-        } else if (blockHour === time) {
+        } else if (scheduleTime === time) {
             $(this).addClass('present');
         } else { 
             $(this).addClass('future');

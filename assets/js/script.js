@@ -1,13 +1,12 @@
 var timeDisplayEl = $('#time-display');
 var saveBtn = $('.saveBtn');
 
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+
 //Function does not begin until DOM has loaded.
  $(document).ready(function() {
     $('.saveBtn').on('click', function() {
-       var parentDiv = $(this).parent();
+       //Targeting parent of function which will match the the hour found in the first div.
+        var parentDiv = $(this).parent();
 
        var textarea = parentDiv.find('textarea');
 
@@ -15,12 +14,13 @@ var saveBtn = $('.saveBtn');
 
        var parentDivID = parentDiv.attr('id');
        localStorage.setItem(parentDivID, setSchedule);
-    
-    
-    
     });
     
-   
+   for (var index = 0; index < parentDivID.length; index++) {
+        // if timedisplayEL === DIV ID set Past
+        // if timedisplayEL > DIV ID set Present
+        // if timedisplayEL === DIV ID set future
+   }
 
     
     

@@ -6,17 +6,18 @@ var saveBtn = $('.saveBtn');
  $(document).ready(function() {
     $('.saveBtn').on('click', function() {
        //Targeting parent of function which will match the the hour found in the first div.
-        var parentDiv = $(this).parent();
+    var parentDiv = $(this).parent();
 
-       var textarea = parentDiv.find('textarea');
+    var textarea = parentDiv.find('textarea');
 
-       var setSchedule = textarea.val();
+    var setSchedule = textarea.val();
 
-       var parentDivID = parentDiv.attr('id');
-       localStorage.setItem(parentDivID, setSchedule);
+    var parentDivID = parentDiv.attr('id');
+    localStorage.setItem(parentDivID, setSchedule);
     });
     
 //Variable to get current hour from dayjs to then compare it to hour in div. Code from class 5, activity 26.
+//change variable to make it an interger to better compare agaisnt variables created below.
 var time = parseInt(dayjs().format('H'));
     //Loop to cycle through each element with time-block class. Extracts out the number in "hour-x" as an interger to compare it to var time's hour.
     $('.time-block').each(function() {
@@ -24,6 +25,10 @@ var time = parseInt(dayjs().format('H'));
         var scheduleID = $(this).attr('id').split('-');
         var scheduleHour = parseInt(scheduleID[1]);
         var scheduleAmPm = scheduleID[2];
+
+        var parentDiv = $(this);
+        var textarea = parentDiv.find('textarea');
+        var parentDivID = parentDiv.attr('id');
        
         if (scheduleAmPm === "PM" && scheduleHour !== 12) {
             scheduleHour += 12;
@@ -31,8 +36,7 @@ var time = parseInt(dayjs().format('H'));
             scheduleHour = 0;
         }
 
-        console.log("scheduleHour:", scheduleHour, "scheduleAmPm:", scheduleAmPm, "time:", time);
-
+    //Applies correct color depending on current time. 
         if (scheduleHour < time) {
             $(this).addClass('past');
         } else if (scheduleHour === time) {
@@ -40,10 +44,24 @@ var time = parseInt(dayjs().format('H'));
         } else { 
             $(this).addClass('future');
         }
+
+       var parentDivID = $(this).attr("id");
+    var textarea = $(this).find("textarea");
+    var savedSchedule = localStorage.getItem(parentDivID);
+    if (savedSchedule !== null) {
+      textarea.val(savedSchedule);
+    }
+    
+    
+    
     });
+
     
+    //creating variable to save local store
+
     
-    
+
+
     
     
     

@@ -1,7 +1,7 @@
 # Day-Planner
 
 ## Description
-This simple and sleek webpage is a great way to stay on top of schedule. Enter your schedule for the day based on hour blocks. Don't worry if you leave the page, the schedule has been saved using local storage. 
+This simple and sleek webpage is a great way to stay on top of your schedule. Enter your schedule for the day based on hour blocks. Don't worry if you leave the page, the schedule will be saved using local storage.
 
 
 ![Alt text](https://github.com/Adam-Riet/Day-Planner/blob/main/assets/images/Screenshot%202023-03-23%20at%204.27.46%20PM.png)
